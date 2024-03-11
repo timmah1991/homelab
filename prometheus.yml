@@ -20,11 +20,27 @@ rule_files:
 # Here it's Prometheus itself.
 scrape_configs:
 
+  - job_name: "ultra1_onwifi"
+    scrape_interval: 5s
+    metrics_path: '/plugin/prometheus_exporter/metrics'
+    params:
+      apikey: ['29EEE5D9A3074D31A5E19DE55F035298']
+    static_configs:
+      - targets: ["wifi.ultra1.tla.com:80"]
+    
+  - job_name: "ultra2_onwifi"
+    scrape_interval: 5s
+    metrics_path: '/plugin/prometheus_exporter/metrics'
+    params:
+      apikey: ['DFE4319FA00448E4AA23956CA9B8E9F3']
+    static_configs:
+      - targets: ["wifi.ultra2.tla.com:80"]
+
   - job_name: "ultra1"
     scrape_interval: 5s
     metrics_path: '/plugin/prometheus_exporter/metrics'
     params:
-      apikey: ['__OCTOPRINT_APIKEY__']
+      apikey: ['29EEE5D9A3074D31A5E19DE55F035298']
     static_configs:
       - targets: ["ultra1.tla.com:80"]
     
@@ -32,7 +48,7 @@ scrape_configs:
     scrape_interval: 5s
     metrics_path: '/plugin/prometheus_exporter/metrics'
     params:
-      apikey: ['__OCTOPRINT_APIKEY__']
+      apikey: ['DFE4319FA00448E4AA23956CA9B8E9F3']
     static_configs:
       - targets: ["ultra2.tla.com:80"]
     
