@@ -28,7 +28,7 @@ scrape_configs:
   - job_name: 't13e'
     scrape_interval: 30s
     static_configs:
-    - targets: ['t13e.local:9100']
+    - targets: ['t13e.tla.com:9100']
 
   - job_name: "ultra1_onwifi"
     scrape_interval: 5s
